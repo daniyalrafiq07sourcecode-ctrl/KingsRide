@@ -63,10 +63,10 @@ const Hero = () => {
 
                     {/* Hero bottom cards */}
                     <div className="hero-bottom-main">
-                        <Row className='align-items-center justify-content-center'>
+                        <Row className=''>
                             {[1, 2, 3].map((i) => (
                                 <Col key={i} lg={4} md={6} sm={12}>
-                                    <div className="hero-bottom-card" data-aos="fade-up" data-aos-delay={800 + i * 100}>
+                                    <div className="hero-bottom-card"  >
                                         <div className="icon">
                                             <Image
                                                 src={`/hero-bottom-icon${i}.png`}
