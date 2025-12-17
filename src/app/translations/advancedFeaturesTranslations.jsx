@@ -1,0 +1,67 @@
+export const advancedFeaturesTranslations = {
+    English: {
+        headingspan: "Advanced Features",
+        title: "Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua.",
+        textContent: {
+            headingspan: "for passengers",
+            title: "Aliquam vestibulum velit amet lacus morbi",
+            para: "Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo.",
+            listheading: "Posuere luctus ridiculus.",
+            listpara: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+            listheadingsec: "Posuere luctus ridiculus.",
+            listparasec: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+        },
+    },
+    Urdu: {
+        headingspan: "جدید خصوصیات",
+        title: "سیڈو اییوسموڈ ٹیمپور انسی ڈیڈنٹ ات لیبورو ایٹ ڈولورے میگنا ایلیقوا۔",
+        textContent: {
+            headingspan: "مسافروں کے لیے",
+            title: "علیقم ویسٹیبولم ویلیٹ امیت لاسکس موربی",
+            para: "سگٹیسس موربی پلونار اییوسموڈ فرنچلا بلانڈٹ پروئن آکٹر۔ ڈیگنسسم کوئس ویتے ای سی آگوی سپینڈیس۔ ویتے نان ٹورپیس ویتے سینیکٹس۔ نیقے ٹرسٹیکس کنوالس لیکٹس ایگیسٹاس ایٹ نان انٹے ان اولاکمپر۔ پوسویئر لوکتس ریڈی کیولس مورئیس اییولکولس پلونار میٹس ات۔ سگٹیسس ننک اورسی پوسویئر ایجیٹ ایڈیپیسنگ کوئسکی۔ ویتے کومموڈو۔",
+            listheading: "پوسویئر لوکتس ریڈی کیولس۔",
+            listpara: "پوسویئر لوکتس ریڈی کیولس۔ سگٹیسس موربی پلونار اییوسموڈ فرنچلا بلانڈٹ پروئن آکٹر۔ ڈیگنسسم کوئس ویتے ای سی آگوی سپینڈیس۔ ویتے نان ٹورپیس ویتے سینیکٹس۔ نیقے ٹرسٹیکس کنوالس لیکٹس ایگیسٹاس ایٹ نان انٹے ان اولاکمپر۔",
+            listheadingsec: "پوسویئر لوکتس ریڈی کیولس۔",
+            listparasec: "پوسویئر لوکتس ریڈی کیولس۔ سگٹیسس موربی پلونار اییوسموڈ فرنچلا بلانڈٹ پروئن آکٹر۔ ڈیگنسسم کوئس ویتے ای سی آگوی سپینڈیس۔ ویتے نان ٹورپیس ویتے سینیکٹس۔ نیقے ٹرسٹیکس کنوالس لیکٹس ایگیسٹاس ایٹ نان انٹے ان اولاکمپر۔",
+        },
+    },
+    German: {
+        headingspan: "Erweiterte Funktionen",
+        title: "Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua.",
+        textContent: {
+            headingspan: "für Passagiere",
+            title: "Aliquam vestibulum velit amet lacus morbi",
+            para: "Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo.",
+            listheading: "Posuere luctus ridiculus.",
+            listpara: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+            listheadingsec: "Posuere luctus ridiculus.",
+            listparasec: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+        },
+    },
+    French: {
+        headingspan: "Fonctionnalités avancées",
+        title: "Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua.",
+        textContent: {
+            headingspan: "pour les passagers",
+            title: "Aliquam vestibulum velit amet lacus morbi",
+            para: "Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo.",
+            listheading: "Posuere luctus ridiculus.",
+            listpara: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+            listheadingsec: "Posuere luctus ridiculus.",
+            listparasec: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+        },
+    },
+    Japanese: {
+        headingspan: "高度な機能",
+        title: "Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua.",
+        textContent: {
+            headingspan: "乗客向け",
+            title: "Aliquam vestibulum velit amet lacus morbi",
+            para: "Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo.",
+            listheading: "Posuere luctus ridiculus.",
+            listpara: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+            listheadingsec: "Posuere luctus ridiculus.",
+            listparasec: "Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper.",
+        },
+    },
+};

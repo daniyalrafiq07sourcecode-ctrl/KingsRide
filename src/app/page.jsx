@@ -8,9 +8,8 @@ import { ForPassengers } from "./components/ForPassengers.jsx";
 import { Works } from "./components/Works.jsx";
 import { Testimonials } from "./components/Testimonials.jsx";
 import { DownloadApp } from './components/DownloadApp';
-
-import Faq from './components/Faq';
-
+import Faq from './components/Faq.jsx';
+import Loader from "./components/Loader"
 
 
 export default function Home() {

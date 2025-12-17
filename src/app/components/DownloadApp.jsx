@@ -6,8 +6,12 @@ import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useLanguage } from '../Context/LanguageContext';
+import { downloadAppTranslations } from '../translations/downloadAppTranslations';
 
 export const DownloadApp = () => {
+    const { language } = useLanguage();
+    const t = downloadAppTranslations[language] || downloadAppTranslations.English;
 
     useEffect(() => {
         AOS.init({
@@ -26,19 +30,15 @@ export const DownloadApp = () => {
                         {/* Left Content */}
                         <Col lg="6" md="12">
                             <div className="downloadapp-content">
-                                <span data-aos="fade-up" data-aos-delay="100">Download</span>
-                                <h2 data-aos="fade-up" data-aos-delay="200">Download app to enjoy your Rides</h2>
-                                <p data-aos="fade-up" data-aos-delay="300">
-                                    Tristique morbi pulvinar euismod fringilla blandit proin auctor.
-                                    Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus.
-                                    Neque tristique convallis.
-                                </p>
+                                <span data-aos="fade-up" data-aos-delay="100">{t.heading}</span>
+                                <h2 data-aos="fade-up" data-aos-delay="200">{t.title}</h2>
+                                <p data-aos="fade-up" data-aos-delay="300">{t.para}</p>
 
                                 <div className="downloadapp-btn-main" data-aos="fade-up" data-aos-delay="400">
                                     <Link href="/" className='theme-btn theme-btn-secondary'>
                                         <Image
                                             src="/google-play-img.png"
-                                            alt="Google Play"
+                                            alt={t.googleAlt}
                                             width={100}
                                             height={50}
                                             className="img-fluid"
@@ -47,7 +47,7 @@ export const DownloadApp = () => {
                                     <Link href="/" className='theme-btn'>
                                         <Image
                                             src="/app-store-img.png"
-                                            alt="App Store"
+                                            alt={t.appstoreAlt}
                                             width={100}
                                             height={50}
                                             className="img-fluid"

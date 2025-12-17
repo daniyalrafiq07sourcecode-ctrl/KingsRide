@@ -1,19 +1,26 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import FeaturesHeading from './FeaturesHeading';
 import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { useLanguage } from '../Context/LanguageContext';
+import { forPassengersTranslations } from '../translations/forPassengersTranslations';
+
 export const ForPassengers = () => {
+    const { language } = useLanguage();
+    const t = forPassengersTranslations[language] || forPassengersTranslations.English;
+    const content = t.textContent;
+
     useEffect(() => {
         AOS.init({
-            duration: 1000,           // consistent with other sections
-            easing: 'ease-out-cubic', // smooth easing
-            once: false,              // repeat on scroll
-            mirror: false,            // subtle effect
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
         });
     }, []);
 
@@ -25,13 +32,13 @@ export const ForPassengers = () => {
                     <Col lg={6} md={12}>
                         <div data-aos="fade-right" data-aos-delay="200">
                             <FeaturesHeading
-                                headingspan="for passengers"
-                                title="Aliquam vestibulum velit amet lacus morbi"
-                                para="Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo."
-                                listheading="Posuere luctus ridiculus. "
-                                listpara="Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper."
-                                listheadingsec="Posuere luctus ridiculus. "
-                                listparasec="Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper."
+                                headingspan={t.headingspan}
+                                title={t.title}
+                                para={content.para}
+                                listheading={content.listheading}
+                                listpara={content.listpara}
+                                listheadingsec={content.listheadingsec}
+                                listparasec={content.listparasec}
                             />
                         </div>
                     </Col>

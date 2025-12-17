@@ -5,14 +5,19 @@ import { Col, Container, Row } from "react-bootstrap";
 import MainHeading from "./MainHeading";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useLanguage } from "../Context/LanguageContext";
+import { aboutTranslations } from "../translations/about";
 
 export const About = () => {
+  const { language } = useLanguage();
+  const t = aboutTranslations[language] || aboutTranslations.English;
+
   useEffect(() => {
     AOS.init({
-      duration: 1000,           // match header/hero smooth speed
-      easing: 'ease-out-cubic', // smooth easing
-      once: false,              // repeat on scroll
-      mirror: false,            // subtle animation only
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: false,
+      mirror: false,
     });
   }, []);
 
@@ -21,11 +26,11 @@ export const About = () => {
       <Container>
         <div className="about-us-section-main">
 
-          {/* PRO animated heading */}
+          {/* Animated heading */}
           <div data-aos="fade-up" data-aos-delay="100">
             <MainHeading
-              headingspan="About Us"
-              title="Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua."
+              headingspan={t.headingSpan}
+              title={t.title}
             />
           </div>
 
@@ -34,15 +39,12 @@ export const About = () => {
             <Col lg={4} md={12}>
               <div className="about-circle-wrapepr">
                 <div className="about-circle-main">
-                  {[
-                    { value: "1M+", label: "Downloads" },
-                    { value: "2300+", label: "Reviews" },
-                  ].map((item, index) => (
+                  {t.stats.slice(0, 2).map((item, index) => (
                     <div
                       key={index}
                       className="about-circle"
                       data-aos="zoom-in"
-                      data-aos-delay={200 + index * 150} // staggered delay
+                      data-aos-delay={200 + index * 150}
                       data-aos-offset="100"
                     >
                       <h5>{item.value}</h5>
@@ -52,15 +54,12 @@ export const About = () => {
                 </div>
 
                 <div className="about-circle-main verticle">
-                  {[
-                    { value: "100k", label: "Followers" },
-                    { value: "20+", label: "Downloads" },
-                  ].map((item, index) => (
+                  {t.stats.slice(2).map((item, index) => (
                     <div
                       key={index}
                       className="about-circle"
                       data-aos="zoom-in"
-                      data-aos-delay={500 + index * 150} // staggered delay
+                      data-aos-delay={500 + index * 150}
                       data-aos-offset="100"
                     >
                       <h5>{item.value}</h5>
@@ -71,11 +70,9 @@ export const About = () => {
               </div>
             </Col>
 
-
             {/* RIGHT content */}
             <Col lg={8} md={12}>
               <div className="mobile-card">
-                {/* IMAGE reveal */}
                 <div className="mobile-img" data-aos="fade-up" data-aos-delay="600">
                   <Image
                     src="/mobile-ing.png"
@@ -86,23 +83,15 @@ export const About = () => {
                   />
                 </div>
 
-                {/* TEXT */}
                 <div className="about-sec-content" data-aos="fade-up" data-aos-delay="700">
-                  <p>
-                    Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim
-                    quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque
-                    tristique convallis lectus egestas et non ante in ullamcorper.
-                  </p>
-
-                  <p>
-                    Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo urna vitae
-                    placerat. Aliquam vestibulum velit amet lacus morbi. Volutpat amet a duis
-                    suscipit morbi tellus sed morbi cras.
-                  </p>
+                  {t.paragraphs.map((para, index) => (
+                    <p key={index}>{para}</p>
+                  ))}
                 </div>
               </div>
             </Col>
           </Row>
+
         </div>
       </Container>
     </section>

@@ -1,15 +1,20 @@
 'use client';
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 import { Col, Container, Row, Form, Button, Image } from 'react-bootstrap';
+import { useLanguage } from '../Context/LanguageContext';
+import { footerTranslations } from '../translations/footerTranslations';
 
-// import Form from 'react-bootstrap/Form';
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = footerTranslations[language] || footerTranslations.English;
+  const year = new Date().getFullYear();
+
   return (
     <footer className='footer'>
       <Container>
-        <Row >
-          <Col lg="6" md="12" >
+        <Row>
+          <Col lg="6" md="12">
             <div className="footer-main">
               <Image
                 src="/footerlogo.png"
@@ -17,50 +22,40 @@ export default function Footer() {
                 height={50}
               />
 
-
-              <strong>Subscribe Newsletter</strong>
-              <p>Be the first to receive all latest post in your inbox</p>
+              <strong>{t.newsletter.heading}</strong>
+              <p>{t.newsletter.text}</p>
               <Form>
-                <Form.Group className="mb-3 footer-form" controlId="exampleForm.ControlInput1">
-                  <Form.Control type="email" placeholder="name@example.com" />
-                  <Button className='theme-btn ' >Subscribe</Button>
+                <Form.Group className="mb-3 footer-form" controlId="newsletterEmail">
+                  <Form.Control type="email" placeholder={t.newsletter.placeholder} />
+                  <Button className='theme-btn'>{t.newsletter.button}</Button>
                 </Form.Group>
                 <div className="footer-contact">
-                  <a href="mailto:Support@example.com">Support@example.com</a> <span>|</span>
-                  <a href="tel:+1234567891">+1 234 567 891</a>
+                  <a href={`mailto:${t.newsletter.contactEmail}`}>{t.newsletter.contactEmail}</a> <span>|</span>
+                  <a href={`tel:${t.newsletter.contactPhone}`}>{t.newsletter.contactPhone}</a>
                 </div>
-
-
               </Form>
             </div>
           </Col>
-          <Col lg="3" md="12" >
+
+          <Col lg="3" md="12">
             <div className="footer-content">
-              <h4>Quick Links</h4>
+              <h4>{t.quickLinks.heading}</h4>
               <div className="footer-links">
-                <Link href="/">
-                  Home
-                </Link>
-                <Link href="/">
-                  About us
-                </Link>
-                <Link href="/">
-                  Pricing
-                </Link>
-                <Link href="/">
-                  Contact us
-                </Link>
+                {t.quickLinks.links.map((link, i) => (
+                  <Link key={i} href={link.href}>{link.title}</Link>
+                ))}
               </div>
             </div>
           </Col>
-          <Col lg="3" md="12" >
+
+          <Col lg="3" md="12">
             <div className="footer-content">
-              <h4>Download App</h4>
+              <h4>{t.downloadApp.heading}</h4>
               <div className="hero-btm-main">
-                <Link href="/" className='theme-btn theme-btn-secondary '>
+                <Link href="/" className='theme-btn theme-btn-secondary'>
                   <Image
                     src="/google-play-img.png"
-                    alt="Logo"
+                    alt="Google Play"
                     width={100}
                     height={50}
                     className="img-fluid"
@@ -69,22 +64,21 @@ export default function Footer() {
                 <Link href="/" className='theme-btn'>
                   <Image
                     src="/app-store-img.png"
-                    alt="Logo"
+                    alt="App Store"
                     width={100}
                     height={50}
                     className="img-fluid"
-                  /></Link>
+                  />
+                </Link>
               </div>
-            </div></Col>
-
+            </div>
+          </Col>
         </Row>
-        <div className="footer-bottom">
-          <p className="footer-tex">
-            &copy; {new Date().getFullYear()} Your Company. All Rights Reserved.
-          </p>
 
+        <div className="footer-bottom">
+          <p className="footer-tex">{t.copyright(year)}</p>
         </div>
       </Container>
-    </footer >
-  )
+    </footer>
+  );
 }

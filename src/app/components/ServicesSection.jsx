@@ -10,20 +10,28 @@ import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Autoplay } from "swiper/modules";
+
+import { useLanguage } from "../Context/LanguageContext";
+import { servicesTranslations } from "../translations/servicesTranslations";
+
+// Static image + link data
 const servicesData = [
-    { img: "/bike-img.png", title: "Bike", subtitle: "Your fastest choice", desc: "Bajaj Boxer, Haojue HJ125, and similar models", link: "/" },
-    { img: "/comfort-img.png", title: "Comfort", subtitle: "More comfort during the ride", desc: "Kia Rio, Mitsubishi Mirage, and Suzuki Dzire", link: "/" },
-    { img: "/economy-img.png", title: "Economy", subtitle: "For basic affordable rides", desc: "Kia Rio, Volkswagen Polo, and Hyundai Solaris", link: "/" },
-    { img: "/rickshaw-img.png", title: "Rickshaw", subtitle: "For local, low-cost trips", desc: "Piaggio Ape, TVS King, and similar models", link: "/" },
+    { img: "/bike-img.png", link: "/" },
+    { img: "/comfort-img.png", link: "/" },
+    { img: "/economy-img.png", link: "/" },
+    { img: "/rickshaw-img.png", link: "/" },
 ];
 
 export const ServicesSection = () => {
+    const { language } = useLanguage();
+    const t = servicesTranslations[language] || servicesTranslations.English;
+
     useEffect(() => {
         AOS.init({
-            duration: 1000,           // match previous smooth speed
-            easing: 'ease-out-cubic', // consistent easing
-            once: false,              // repeat on scroll
-            mirror: false,            // subtle animation only
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
         });
     }, []);
 
@@ -32,7 +40,7 @@ export const ServicesSection = () => {
             <Container>
                 {/* Heading */}
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <MainHeading headingspan="Service" title="Discover all the Services Class" />
+                    <MainHeading headingspan={t.headingSpan} title={t.title} />
                 </div>
 
                 {/* Swiper Cards */}
@@ -41,35 +49,38 @@ export const ServicesSection = () => {
                     slidesPerView="auto"
                     modules={[Autoplay]}
                     autoplay={{
-                        delay: 2500, // time between slides in ms
-                        disableOnInteraction: false, // continue autoplay after user interaction
+                        delay: 2500,
+                        disableOnInteraction: false,
                     }}
                 >
-                    {servicesData.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <div
-                                className="services-card"
-                                data-aos="fade-up"
-                                data-aos-delay={200 + index * 150} // sequential popup
-                                data-aos-offset="100"
-                            >
-                                {/* Image */}
-                                <div data-aos="zoom-in" data-aos-delay={250 + index * 150}>
-                                    <Image src={item.img} alt={item.title} height={200} width={200} />
-                                </div>
+                    {servicesData.map((item, index) => {
+                        const serviceText = t.services[index]; // get translated text for this index
+                        return (
+                            <SwiperSlide key={index}>
+                                <div
+                                    className="services-card"
+                                    data-aos="fade-up"
+                                    data-aos-delay={200 + index * 150}
+                                    data-aos-offset="100"
+                                >
+                                    {/* Image */}
+                                    <div data-aos="zoom-in" data-aos-delay={250 + index * 150}>
+                                        <Image src={item.img} alt={serviceText.title} height={200} width={200} />
+                                    </div>
 
-                                {/* Content */}
-                                <div className="services-card-content" data-aos="fade-up" data-aos-delay={300 + index * 150}>
-                                    <h4>{item.title}</h4>
-                                    <span>{item.subtitle}</span>
-                                    <p>{item.desc}</p>
-                                    <Link className="theme-btn theme-btn-secondary theme-btn-secondary-border" href={item.link}>
-                                        Book a Ride
-                                    </Link>
+                                    {/* Content */}
+                                    <div className="services-card-content" data-aos="fade-up" data-aos-delay={300 + index * 150}>
+                                        <h4>{serviceText.title}</h4>
+                                        <span>{serviceText.subtitle}</span>
+                                        <p>{serviceText.desc}</p>
+                                        <Link className="theme-btn theme-btn-secondary theme-btn-secondary-border" href={item.link}>
+                                            Book a Ride
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                            </SwiperSlide>
+                        );
+                    })}
                 </Swiper>
             </Container>
         </section>

@@ -8,25 +8,30 @@ import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { useLanguage } from "../Context/LanguageContext";
+import { advancedFeaturesTranslations } from "../translations/advancedFeaturesTranslations";
+
 export const AdvancedFeatures = () => {
+    const { language } = useLanguage();
+    const t = advancedFeaturesTranslations[language] || advancedFeaturesTranslations.English;
+
     useEffect(() => {
         AOS.init({
-            duration: 1000,           // consistent with other sections
-            easing: 'ease-out-cubic', // smooth easing
-            once: false,              // repeat on scroll
-            mirror: false,            // subtle animation
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
         });
     }, []);
+
+    const content = t.textContent;
 
     return (
         <section className='advanced-features'>
             <Container>
                 {/* Heading */}
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <MainHeading
-                        headingspan="Advanced Features"
-                        title="Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua."
-                    />
+                    <MainHeading headingspan={t.headingspan} title={t.title} />
                 </div>
 
                 <Row>
@@ -34,13 +39,13 @@ export const AdvancedFeatures = () => {
                     <Col lg={6} md={12}>
                         <div data-aos="fade-right" data-aos-delay="200">
                             <FeaturesHeading
-                                headingspan="for passengers"
-                                title="Aliquam vestibulum velit amet lacus morbi"
-                                para="Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper. Posuere luctus ridiculus mauris iaculis pulvinar mattis ut. Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo."
-                                listheading="Posuere luctus ridiculus. "
-                                listpara="Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper."
-                                listheadingsec="Posuere luctus ridiculus. "
-                                listparasec="Posuere luctus ridiculus. Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas et non ante in ullamcorper."
+                                headingspan={content.headingspan}
+                                title={content.title}
+                                para={content.para}
+                                listheading={content.listheading}
+                                listpara={content.listpara}
+                                listheadingsec={content.listheadingsec}
+                                listparasec={content.listparasec}
                             />
                         </div>
                     </Col>

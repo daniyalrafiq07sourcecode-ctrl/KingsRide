@@ -7,43 +7,32 @@ import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { useLanguage } from "../Context/LanguageContext";
+import { whyChooseUsTranslations } from "../translations/whyChooseUsTranslations";
+
 export const WhyChooseUs = () => {
+  const { language } = useLanguage();
+  const t = whyChooseUsTranslations[language] || whyChooseUsTranslations.English;
+
   useEffect(() => {
     AOS.init({
-      duration: 1000,           // consistent with other sections
-      easing: 'ease-out-cubic', // smooth easing
-      once: false,              // repeat on scroll
-      mirror: false,            // subtle effect
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: false,
+      mirror: false,
     });
   }, []);
 
-  const cards = [
-    {
-      title: "Easy Bookings.",
-      text: "Sagittis nunc orci posuere eget adipiscing quisque. Vitae commodo urna vitae placerat. Aliquam vestibulum velit amet lacus morbi. Volutpat amet a duis suscipit morbi tellus sed morbi cras.",
-      icon: "/why-choose-us-icon.png"
-    },
-    {
-      title: "Affordable Rides.",
-      text: "Enjoy cost-effective rides without compromising comfort or safety. Perfect for everyday travel needs.",
-      icon: "/why-choose-us-icon.png"
-    },
-    {
-      title: "24/7 Support.",
-      text: "Our support team is available round-the-clock to assist you with your bookings and inquiries.",
-      icon: "/why-choose-us-icon.png"
-    }
-  ];
+  const cards = t.cards; // translated cards
+  const headingSpan = t.headingSpan;
+  const title = t.title;
 
   return (
     <section className='why-choose-us'>
       <Container>
         {/* Heading */}
         <div data-aos="fade-up" data-aos-delay="100">
-          <MainHeading
-            headingspan="Why Use KingsRide"
-            title="Seddo eiusmod tempor inci didunt ut labore et dolore magna aliqua."
-          />
+          <MainHeading headingspan={headingSpan} title={title} />
         </div>
 
         <div className="why-choose-us-wrapper">
@@ -68,12 +57,12 @@ export const WhyChooseUs = () => {
                     className="why-choose-us-card"
                     key={index}
                     data-aos="fade-up"
-                    data-aos-delay={300 + index * 150} // sequential popup
+                    data-aos-delay={300 + index * 150}
                   >
                     <div className="icon" data-aos="zoom-in" data-aos-delay={350 + index * 150}>
                       <Image
                         alt='why choose us icon'
-                        src={card.icon}
+                        src="/why-choose-us-icon.png"
                         height={72}
                         width={72}
                       />

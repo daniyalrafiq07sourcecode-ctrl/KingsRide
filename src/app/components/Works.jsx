@@ -8,33 +8,18 @@ import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const worksCardsdata = [
-    {
-        iconsrc: '/works-icon1.png',
-        title: 'Download App & create a free account',
-        para: 'Tristique morbi pulvinar euismod fringilla blandit proin auctor. Dignissim quis vitae ac augue suspendisse. Vitae non turpis vitae senectus. Neque tristique convallis lectus egestas.',
-        num: '01'
-    },
-    {
-        iconsrc: '/works-icon1.png',
-        title: 'Choose your preferred ride',
-        para: 'Select the vehicle and time that suits your needs. Enjoy a hassle-free experience with KingsRide.',
-        num: '02'
-    },
-    {
-        iconsrc: '/works-icon1.png',
-        title: 'Start your journey safely',
-        para: 'Track your ride, get updates, and arrive at your destination with comfort and safety.',
-        num: '03'
-    }
-];
+import { useLanguage } from '../Context/LanguageContext';
+import { worksTranslations } from '../translations/worksTranslations';
 
 export const Works = () => {
+    const { language } = useLanguage();
+    const t = worksTranslations[language] || worksTranslations.English;
+
     useEffect(() => {
         AOS.init({
-            duration: 1000,           // smooth speed
-            easing: 'ease-out-cubic', // consistent easing
-            once: false,              // repeat on scroll
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false,
             mirror: false,
         });
     }, []);
@@ -43,26 +28,23 @@ export const Works = () => {
         <section className='works'>
             <Container>
                 <div className="works-wrapper">
-                    {/* MainHeading is already animated, do not animate it again */}
                     <div className="white-main-heading">
                         <MainHeading
-                            headingspan="Easy Steps"
-                            title="How it Works"
-                            para="Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+                            headingspan={t.headingspan}
+                            title={t.title}
+                            para={t.para}
                         />
                     </div>
 
-                    {/* Works cards */}
                     <div className="works-card-main">
                         <Row>
-                            {worksCardsdata.map((item, index) => (
+                            {t.cards.map((item, index) => (
                                 <Col lg="4" md="6" sm="12" key={index}>
-                                    {/* Parent div for animating the whole card */}
                                     <div className='worsks-card' data-aos="fade-up" data-aos-delay={100 + index * 150}>
                                         <div className="works-card">
                                             <div className="icon">
                                                 <Image
-                                                    src={item.iconsrc}
+                                                    src={item.iconsrc || '/works-icon1.png'}
                                                     alt={item.title}
                                                     height={72}
                                                     width={69.01}
@@ -71,9 +53,7 @@ export const Works = () => {
                                             <div className="works-card-content">
                                                 <h4>{item.title}</h4>
                                                 <p>{item.para}</p>
-                                                <div className="works-card-num">
-                                                    {item.num}
-                                                </div>
+                                                <div className="works-card-num">{item.num}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -81,9 +61,8 @@ export const Works = () => {
                             ))}
                         </Row>
 
-                        {/* Bottom section */}
                         <div className="works-bottom" data-aos="fade-up" data-aos-delay={600}>
-                            <strong>Get 50% off on your first order! Grab it now</strong>
+                            <strong>{t.bottomText}</strong>
                             <div className="works-btn-main">
                                 <Link href="/" className='theme-btn theme-btn-secondary' data-aos="zoom-in" data-aos-delay={650}>
                                     <Image

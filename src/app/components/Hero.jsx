@@ -6,13 +6,19 @@ import { Col, Container, Row } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { useLanguage } from "../Context/LanguageContext";
+import { heroTranslations } from "../translations/hero";
+
 const Hero = () => {
+    const { language } = useLanguage();
+    const t = heroTranslations[language] || heroTranslations.English;
+
     useEffect(() => {
         AOS.init({
-            duration: 1000,           // smooth animation duration
-            easing: 'ease-out-cubic', // smooth easing
-            once: false,              // repeat on scroll
-            mirror: false,            // subtle animation only
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
         });
     }, []);
 
@@ -25,11 +31,12 @@ const Hero = () => {
                         <Row>
                             <Col lg={8} md={12}>
                                 <div className="hero-content">
-                                    <h1 className="hero-title" data-aos="fade-up" data-aos-delay="100">
-                                        <span>Kings Ride</span> Your Reliable Ride Companion in Karachi!
+                                    <h1 className='hero-title' data-aos="fade-up" data-aos-delay="100">
+                                        <span>{t.titleMain}</span> {t.titleSub} 
                                     </h1>
+
                                     <p className="hero-paragraph" data-aos="fade-up" data-aos-delay="200">
-                                        Experience the ultimate in comfort and convenience with our top-rated ride services. Whether you're heading to the airport, exploring the city, or need a quick ride across town, we've got you covered.
+                                        {t.description}
                                     </p>
                                 </div>
                             </Col>
@@ -38,55 +45,45 @@ const Hero = () => {
                                 <div className="hero-content hero-content-right">
                                     <div className="hero-btm-main" data-aos="fade-left" data-aos-delay="300">
                                         <div data-aos="zoom-in" data-aos-delay="400">
-                                            <Link href="/" className='theme-btn theme-btn-secondary '>
-                                                <Image src="/google-play-img.png" alt="Google Play" width={100} height={50} className="img-fluid" />
+                                            <Link href="/" className='theme-btn theme-btn-secondary'>
+                                                <Image src="/google-play-img.png" alt="Google Play" width={100} height={50} />
                                             </Link>
                                         </div>
                                         <div data-aos="zoom-in" data-aos-delay="500">
                                             <Link href="/" className='theme-btn'>
-                                                <Image src="/app-store-img.png" alt="App Store" width={100} height={50} className="img-fluid" />
+                                                <Image src="/app-store-img.png" alt="App Store" width={100} height={50} />
                                             </Link>
                                         </div>
                                     </div>
+
                                     <p data-aos="fade-left" data-aos-delay="600">
-                                        The best application to manage your customers worldwide.
+                                        {t.appText}
                                     </p>
                                 </div>
                             </Col>
                         </Row>
                     </div>
 
-                    {/* Hero image */}
                     <div className="hero-img-main" data-aos="fade-up" data-aos-delay="700">
                         <Image src="/hero-img.png" alt="Hero Image" width={950} height={400} className="hero-img img-fluid" />
                     </div>
 
-                    {/* Hero bottom cards */}
                     <div className="hero-bottom-main">
-                        <Row className=''>
-                            {[1, 2, 3].map((i) => (
+                        <Row>
+                            {t.cards.map((card, i) => (
                                 <Col key={i} lg={4} md={6} sm={12}>
-                                    <div className="hero-bottom-card"  >
+                                    <div className="hero-bottom-card">
                                         <div className="icon">
                                             <Image
-                                                src={`/hero-bottom-icon${i}.png`}
-                                                alt={`Icon ${i}`}
+                                                src={`/hero-bottom-icon${i + 1}.png`}
+                                                alt="Icon"
                                                 width={72}
                                                 height={72}
-                                                className='img-fluid'
                                             />
                                         </div>
                                         <div className="hero-bottom-card-content">
-                                            <h6>
-                                                {i === 1 && "Best Price Guaranteed."}
-                                                {i === 2 && "24/7 Customer care."}
-                                                {i === 3 && "Easy Bookings."}
-                                            </h6>
-                                            <p>
-                                                {i === 1 && "Best Price Guaranteed."}
-                                                {i === 2 && "Enjoy competitive rates for all your travel needs."}
-                                                {i === 3 && "Quick, hassle-free bookings for everyone."}
-                                            </p>
+                                            <h6>{card.title}</h6>
+                                            <p>{card.text}</p>
                                         </div>
                                     </div>
                                 </Col>
