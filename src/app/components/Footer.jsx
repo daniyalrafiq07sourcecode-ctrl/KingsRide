@@ -52,7 +52,7 @@ export default function Footer() {
             <div className="footer-content">
               <h4>{t.downloadApp.heading}</h4>
               <div className="hero-btm-main">
-                <Link href="/" className='theme-btn theme-btn-secondary'>
+                <Link href="/about" className='theme-btn theme-btn-secondary'>
                   <Image
                     src="/google-play-img.png"
                     alt="Google Play"
@@ -77,6 +77,14 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-tex">{t.copyright(year)}</p>
+          <div className="terms">
+            <Link href="privacyPolicy" >
+              {t.Privicy.Pr}
+            </Link>
+            <Link href="Terms" >
+              {t.Privicy.Tr}
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

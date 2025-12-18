@@ -8,6 +8,10 @@ export const footerTranslations = {
             contactEmail: "Support@example.com",
             contactPhone: "+1 234 567 891"
         },
+        Privicy: {
+            Pr: "Privicy Policy",
+            Tr: "Terms & condotions"
+        },
         quickLinks: {
             heading: "Quick Links",
             links: [
@@ -30,6 +34,10 @@ export const footerTranslations = {
             button: "سبسکرائب کریں",
             contactEmail: "Support@example.com",
             contactPhone: "+1 234 567 891"
+        },
+        Privicy: {
+            Pr: "پرائیویسی پالیسی",
+            Tr: "شرائط و ضوابط"
         },
         quickLinks: {
             heading: "فوری لنکس",
@@ -54,6 +62,10 @@ export const footerTranslations = {
             contactEmail: "Support@example.com",
             contactPhone: "+1 234 567 891"
         },
+        Privicy: {
+            Pr: "Datenschutzrichtlinie",
+            Tr: "Allgemeine Geschäftsbedingungen"
+        },
         quickLinks: {
             heading: "Schnelllinks",
             links: [
@@ -77,6 +89,10 @@ export const footerTranslations = {
             contactEmail: "Support@example.com",
             contactPhone: "+1 234 567 891"
         },
+        Privicy: {
+            Pr: "Politique de confidentialité",
+            Tr: "Conditions générales"
+        },
         quickLinks: {
             heading: "Liens rapides",
             links: [
@@ -99,6 +115,10 @@ export const footerTranslations = {
             button: "登録",
             contactEmail: "Support@example.com",
             contactPhone: "+1 234 567 891"
+        },
+        Privicy: {
+            Pr: "プライバシーポリシー",
+            Tr: "利用規約"
         },
         quickLinks: {
             heading: "クイックリンク",

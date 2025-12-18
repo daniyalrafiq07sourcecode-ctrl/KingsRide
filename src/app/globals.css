@@ -120,13 +120,20 @@ footer {
   transition: .3s;
 }
 
-.country-header-btn:hover .icon {
-  background: var(--primary);
+.country-header-btn .icon {
+  /* background: var(--primary); */
 }
+
 
 .country-header-btn:hover {
   background: white;
-  color: var(--primary);
+  color: var(--secondary);
+}
+
+.country-header-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
 }
 
 /* Small Flag */
@@ -214,16 +221,16 @@ footer {
   margin-right: auto;
 }
 
-.theme-btn-secondary:hover,
+/* .theme-btn-secondary:hover,
 .theme-btn-secondary-border {
   background: white;
-}
+} */
 
-.header-btn-wrapper.d-flex.gap-2 .theme-btn {
+/* .header-btn-wrapper.d-flex.gap-2 .theme-btn {
   background: white !important;
   color: black !important;
   border-color: white;
-}
+} */
 
 .country-header-btn {
   background: white;
@@ -248,39 +255,41 @@ footer {
   font-weight: 500;
 }
 
+/* 
 header {
   background: linear-gradient(0deg, #0003, #0003), #0a2762;
-}
+} */
 
 /* .logo-wrapper.aos-init.aos-animate a img {
   object-fit: contain;
   width: 170px;
   height: 63px;
 } */
-
+/* 
 .header-btn-wrapper.d-flex.gap-2 .theme-btn:hover {
   background: var(--primary) !important;
   color: white !important;
   border-color: var(--primary) !important;
-}
+} */
 
 /* Sticky header styling */
 .sticky-header {
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background: linear-gradient(0deg, #0003, #0003), #0a2762;
+  /* backdrop-filter: blur(10px); */
+  /* background: linear-gradient(0deg, #0003, #0003), #0a2762; */
   padding: 10px 0;
   position: fixed;
   box-shadow: 0 4px 15px #0000001a;
   width: 100%;
   z-index: 44;
   padding: 0;
+  background: white;
 }
 
-.header-link {
+/* .header-link {
   color: white;
 }
-
+ */
 
 
 /* Animation for sticky header */
@@ -330,7 +339,7 @@ header {
   background: white;
   box-shadow: none;
   color: var(--secondary);
-  border-color: white;
+  border-color: var(--secondary);
 
 }
 
@@ -1031,13 +1040,13 @@ footer.footer {
 .footer-bottom {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   background: #d9d9d90f;
   /* opacity: 0.08; */
   border-radius: 8px;
   color: #ffffff85;
-  padding: 18px;
+  padding: 18px 30px;
   margin-top: 50px;
 }
 
@@ -1210,4 +1219,123 @@ footer.footer {
 
 
   }
+}
+
+.hero-content.services-hero-content {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 610px;
+}
+
+section.services-hero.hero-section {
+  margin: 0;
+  padding: 180px 0;
+  background-position: center;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+/* ===============================
+   Privacy Policy (Exact Match)
+================================ */
+
+.privacy-wrapper {
+  padding: 80px 0;
+}
+
+.privacy-content {
+  max-width: 1070px;
+  padding: 20px 46px;
+  background: #F8F8F8;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.privacy-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 0;
+}
+
+.privacy-section.no-border {
+  border-bottom: none;
+}
+
+.privacy-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.privacy-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+.privacy-subtitle {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.privacy-section ul {
+  padding-left: 20px;
+  margin: 16px 0;
+}
+
+.privacy-section ul li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.privacy-section ul li strong {
+  color: #111827;
+}
+
+.privacy-contact-box {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 20px;
+  background: white;
+}
+
+.privacy-contact-box p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .privacy-wrapper {
+    padding: 60px 16px;
+  }
+
+  .privacy-section {
+    padding: 30px 0;
+  }
+}
+
+.privacy-content {
+  max-width: 1070px;
+  padding: 20px 46px;
+  background: #F8F8F8;
+  border-radius: 10px;
+}
+
+.privacy-section ul li::marker {
+  color: var(--primary);
+  font-size: 19px;
 }

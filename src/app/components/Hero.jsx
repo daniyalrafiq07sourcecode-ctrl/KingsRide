@@ -32,7 +32,7 @@ const Hero = () => {
                             <Col lg={8} md={12}>
                                 <div className="hero-content">
                                     <h1 className='hero-title' data-aos="fade-up" data-aos-delay="100">
-                                        <span>{t.titleMain}</span> {t.titleSub} 
+                                        <span>{t.titleMain}</span> {t.titleSub}
                                     </h1>
 
                                     <p className="hero-paragraph" data-aos="fade-up" data-aos-delay="200">

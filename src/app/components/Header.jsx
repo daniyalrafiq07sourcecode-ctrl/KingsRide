@@ -45,7 +45,7 @@ export const Header = () => {
                     {/* Logo */}
                     <div className="logo-wrapper" data-aos="fade-down" data-aos-delay="100">
                         <Link href="/">
-                            <Image src="/headerlogo.png" alt="Logo" width={170} height={63} />
+                            <Image src="/headerlogooo.png" alt="Logo" width={170} height={63} />
                         </Link>
                     </div>
 
@@ -55,10 +55,10 @@ export const Header = () => {
                         </div>
                         <div className="header-btn-wrapper d-flex gap-2">
                             <div data-aos="zoom-in-up" data-aos-delay="300">
-                                <Link href="/" className='theme-btn theme-btn-secondary theme-btn-secondary-border'>{t.driveWithUs}</Link>
+                                <Link href="/Drive" className='theme-btn theme-btn-secondary theme-btn-secondary-border'>{t.driveWithUs}</Link>
                             </div>
                             <div data-aos="zoom-in-up" data-aos-delay="400">
-                                <Link href="/" className='theme-btn'>{t.bookRide}</Link>
+                                <Link href="/Ride" className='theme-btn'>{t.bookRide}</Link>
                             </div>
                             <div data-aos="zoom-in-up" data-aos-delay="600">
                                 <CountrySelector />
@@ -80,11 +80,11 @@ export const Header = () => {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <div className="d-flex flex-column gap-3">
-                                <Link href="/" className='header-link' onClick={handleClose}>{t.about}</Link>
-                                <Link href="/" className='theme-btn theme-btn-secondary theme-btn-secondary-border' onClick={handleClose}>
+                                <Link href="/about" className='header-link' onClick={handleClose}>{t.about}</Link>
+                                <Link href="/Drive" className='theme-btn theme-btn-secondary theme-btn-secondary-border' onClick={handleClose}>
                                     {t.driveWithUs}
                                 </Link>
-                                <Link href="/" className='theme-btn' onClick={handleClose}>
+                                <Link href="/Ride" className='theme-btn' onClick={handleClose}>
                                     {t.bookRide}
                                 </Link>
                                 <CountrySelector />
