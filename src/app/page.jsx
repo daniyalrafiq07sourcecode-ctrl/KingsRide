@@ -21,7 +21,7 @@ export default function Home() {
       <WhyChooseUs />
       <AdvancedFeatures />
       <ForDrivers />
-      <ForPassengers />
+      {/* <ForPassengers /> */}
       <Works />
       <Testimonials />
       <DownloadApp />

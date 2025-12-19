@@ -2,10 +2,10 @@
 
 import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import MainHeading from './MainHeading';
 import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import MainHeading from "./MainHeading";
 
 import { useLanguage } from "../Context/LanguageContext";
 import { whyChooseUsTranslations } from "../translations/whyChooseUsTranslations";
@@ -23,23 +23,29 @@ export const WhyChooseUs = () => {
     });
   }, []);
 
-  const cards = t.cards; // translated cards
-  const headingSpan = t.headingSpan;
-  const title = t.title;
-
   return (
     <section className='why-choose-us'>
       <Container>
-        {/* Heading */}
+
+        {/* ✅ MAIN HEADING (SPAN → H2 → PARA) */}
         <div data-aos="fade-up" data-aos-delay="100">
-          <MainHeading headingspan={headingSpan} title={title} />
+          <MainHeading
+            headingspan={t.headingSpan}
+            title={t.title}
+            para={t.para}
+          />
         </div>
 
         <div className="why-choose-us-wrapper">
           <Row>
+
             {/* Left Image */}
             <Col lg={4} md={12}>
-              <div className="img-box-contet" data-aos="fade-right" data-aos-delay="200">
+              <div
+                className="img-box-contet"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <Image
                   src="/why-choose-us-img.png"
                   height={580}
@@ -52,22 +58,31 @@ export const WhyChooseUs = () => {
             {/* Right Cards */}
             <Col lg={8} md={12}>
               <div className="why-choose-us-cards-main">
-                {cards.map((card, index) => (
+                {t.cards.map((card, index) => (
                   <div
                     className="why-choose-us-card"
                     key={index}
                     data-aos="fade-up"
                     data-aos-delay={300 + index * 150}
                   >
-                    <div className="icon" data-aos="zoom-in" data-aos-delay={350 + index * 150}>
+                    <div
+                      className="icon"
+                      data-aos="zoom-in"
+                      data-aos-delay={350 + index * 150}
+                    >
                       <Image
-                        alt='why choose us icon'
+                        alt="why choose us icon"
                         src="/why-choose-us-icon.png"
                         height={72}
                         width={72}
                       />
                     </div>
-                    <div className="why-choose-us-card-content" data-aos="fade-up" data-aos-delay={400 + index * 150}>
+
+                    <div
+                      className="why-choose-us-card-content"
+                      data-aos="fade-up"
+                      data-aos-delay={400 + index * 150}
+                    >
                       <h6>{card.title}</h6>
                       <p>{card.text}</p>
                     </div>
@@ -75,6 +90,7 @@ export const WhyChooseUs = () => {
                 ))}
               </div>
             </Col>
+
           </Row>
         </div>
       </Container>

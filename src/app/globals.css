@@ -1339,3 +1339,8 @@ section.services-hero.hero-section {
   color: var(--primary);
   font-size: 19px;
 }
+
+.privacy-section p a {
+  color: var(--primary);
+  font-weight: 600;
+}

@@ -1,9 +1,9 @@
 export const heroTranslations = {
     English: {
-        titleMain: "Kings Ride",
-        titleSub: "Your Reliable Ride Companion in Karachi!",
+        titleMain: "Fast, Reliable, ",
+        titleSub: "On-Demand Urban Mobility For Everyone",
         description:
-            "Experience the ultimate in comfort and convenience with our top-rated ride services. Whether you're heading to the airport, exploring the city, or need a quick ride across town, we've got you covered.",
+            "We connect passengers and drivers through a seamless digital platform, offering ride-hailing, delivery services, and secure payments. Enjoy real-time tracking, efficient routes, and convenient scheduling, all designed for safety, reliability, and affordability. Empowering urban commuters and gig drivers alike, Cab Quik transforms everyday transportation into a smarter, faster, and more dependable experience.",
         appText:
             "The best application to manage your customers worldwide.",
         cards: [
@@ -23,10 +23,10 @@ export const heroTranslations = {
     },
 
     Urdu: {
-        titleMain: "کنگز رائیڈ",
-        titleSub: "کراچی میں آپ کا قابلِ اعتماد سفری ساتھی!",
+        titleMain: "تیز، قابل اعتماد، ",
+        titleSub: "ہر کسی کے لیے آن ڈیمانڈ شہری موبلٹی",
         description:
-            "ہماری اعلیٰ معیار کی رائیڈ سروسز کے ساتھ آرام اور سہولت کا بہترین تجربہ حاصل کریں۔ چاہے آپ ایئرپورٹ جا رہے ہوں یا شہر کی سیر کر رہے ہوں، ہم آپ کے ساتھ ہیں۔",
+            "ہم مسافروں اور ڈرائیورز کو ایک ہموار ڈیجیٹل پلیٹ فارم کے ذریعے جوڑتے ہیں، جو رائیڈ ہیلنگ، ڈیلیوری سروسز اور محفوظ ادائیگیاں فراہم کرتا ہے۔ حقیقی وقت میں ٹریکنگ، مؤثر راستے، اور آسان شیڈولنگ سے لطف اندوز ہوں، سب کچھ حفاظت، اعتماد اور معقولیت کے لیے ڈیزائن کیا گیا ہے۔ شہری مسافروں اور گیگ ڈرائیورز کو بااختیار بناتے ہوئے، Cab Quik روزمرہ کی نقل و حمل کو تیز، ذہین اور قابل اعتماد تجربہ بناتا ہے۔",
         appText:
             "دنیا بھر میں اپنے صارفین کو منظم کرنے کے لیے بہترین ایپ۔",
         cards: [
@@ -46,10 +46,10 @@ export const heroTranslations = {
     },
 
     German: {
-        titleMain: "Kings Ride",
-        titleSub: "Ihr zuverlässiger Fahrdienst in Karachi!",
+        titleMain: "Schnelle, zuverlässige, ",
+        titleSub: "On-Demand-Stadtmobilität für alle",
         description:
-            "Erleben Sie höchsten Komfort und Bequemlichkeit mit unseren erstklassigen Fahrdiensten. Ob Flughafenfahrt, Stadterkundung oder eine kurze Fahrt – wir sind für Sie da.",
+            "Wir verbinden Fahrgäste und Fahrer über eine nahtlose digitale Plattform und bieten Ride-Hailing, Lieferservices und sichere Zahlungen an. Genießen Sie Echtzeit-Tracking, effiziente Routen und bequeme Terminplanung – alles für Sicherheit, Zuverlässigkeit und Erschwinglichkeit. Cab Quik macht den Alltag der urbanen Pendler und Gig-Fahrer intelligenter, schneller und verlässlicher.",
         appText:
             "Die beste App zur Verwaltung Ihrer Kunden weltweit.",
         cards: [
@@ -69,10 +69,10 @@ export const heroTranslations = {
     },
 
     French: {
-        titleMain: "Kings Ride",
-        titleSub: "Votre compagnon de transport fiable à Karachi !",
+        titleMain: "Mobilité urbaine rapide, fiable, ",
+        titleSub: "et à la demande pour tous",
         description:
-            "Profitez d’un confort et d’une commodité exceptionnels grâce à nos services de transport haut de gamme. Aéroport, ville ou trajets rapides, nous sommes là pour vous.",
+            "Nous connectons passagers et conducteurs via une plateforme numérique fluide, offrant des services de transport, de livraison et des paiements sécurisés. Profitez du suivi en temps réel, d’itinéraires efficaces et d’une planification pratique, le tout conçu pour la sécurité, la fiabilité et l’accessibilité. Cab Quik transforme le transport quotidien en une expérience plus intelligente, rapide et fiable pour les navetteurs urbains et les chauffeurs indépendants.",
         appText:
             "La meilleure application pour gérer vos clients dans le monde entier.",
         cards: [
@@ -92,10 +92,10 @@ export const heroTranslations = {
     },
 
     Japanese: {
-        titleMain: "キングスライド",
-        titleSub: "カラチで信頼できる移動パートナー！",
+        titleMain: "迅速で信頼できる、",
+        titleSub: "すべての人のためのオンデマンド都市型モビリティ",
         description:
-            "快適さと利便性を追求した最高品質のライドサービスをご体験ください。空港送迎、市内移動、短距離の移動まで、すべてお任せください。",
+            "私たちは乗客とドライバーをシームレスなデジタルプラットフォームでつなぎ、ライドシェア、配達サービス、安全な支払いを提供します。リアルタイム追跡、効率的なルート、便利なスケジュール管理を楽しみ、安全性、信頼性、手頃さを確保します。Cab Quikは都市の通勤者とギグドライバーの両方を支援し、日常の移動をよりスマートで速く、信頼できる体験に変えます。",
         appText:
             "世界中の顧客を管理するための最適なアプリ。",
         cards: [

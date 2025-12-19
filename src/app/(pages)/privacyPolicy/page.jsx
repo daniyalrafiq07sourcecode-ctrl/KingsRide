@@ -10,6 +10,18 @@ const PrivacyPolicy = () => {
     const { language } = useLanguage()
     const t = privacyPolicyTranslations[language] || privacyPolicyTranslations.English
 
+    const renderParagraphWithEmail = (para) => {
+        const email = "support@cabquik.com"
+        return para.split(email).map((part, index, arr) => (
+            <React.Fragment key={index}>
+                {part}
+                {index < arr.length - 1 && (
+                    <a href={`mailto:${email}`} className="text-blue-600 underline">{email}</a>
+                )}
+            </React.Fragment>
+        ))
+    }
+
     return (
         <>
             <ServicesHero
@@ -23,37 +35,27 @@ const PrivacyPolicy = () => {
 
                         <div className="privacy-section">
                             <h3>{t.introduction.heading}</h3>
-                            <p>{t.introduction.para1}</p>
-                            <p>{t.introduction.para2}</p>
+                            <p>{t.introduction.para}</p>
                         </div>
 
                         <div className="privacy-section">
                             <h3>{t.dataCollection.heading}</h3>
                             <p>{t.dataCollection.para}</p>
-                            <ul>
-                                {t.dataCollection.list.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                            <p>{t.dataCollection.bottomPara}</p>
                         </div>
 
                         <div className="privacy-section">
-                            <h3>{t.useOfData.heading}</h3>
-                            <p>{t.useOfData.intro}</p>
-                            <ul>
-                                {t.useOfData.list.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
+                            <h3>{t.dataSharing.heading}</h3>
+                            <p>{t.dataSharing.para}</p>
                         </div>
 
                         <div className="privacy-section">
-                            <h3>{t.contact.heading}</h3>
-                            <p><strong>Email:</strong> {t.contact.email}</p>
-                            <p><strong>Phone:</strong> {t.contact.phone}</p>
-                            <p><strong>Address:</strong> {t.contact.address}</p>
-                            <p><strong>Hours:</strong> {t.contact.hours}</p>
+                            <h3>{t.userRights.heading}</h3>
+                            <p>{t.userRights.para}</p>
+                        </div>
+
+                        <div className="privacy-section no-border">
+                            <h3>{t.policyUpdates.heading}</h3>
+                            <p>{renderParagraphWithEmail(t.policyUpdates.para)}</p>
                         </div>
 
                     </div>

@@ -1,11 +1,11 @@
 import { RiCheckLine } from "@remixicon/react";
 import React from "react";
 
-const FeaturesHeading = ({ headingspan, title, para, listheading, listpara, listheadingsec, listparasec }) => {
+const FeaturesHeading = ({ headingSpan, title, para, listheading, listpara, listheadingsec, listparasec }) => {
     return (
         <div className="feature-content">
             <div className="features-heading">
-                <span>{headingspan}</span>
+                <span>{headingSpan}</span>
                 <h3>{title}</h3>
                 <p>{para}</p>
             </div>
@@ -34,4 +34,6 @@ const FeaturesHeading = ({ headingspan, title, para, listheading, listpara, list
     );
 };
 
-export default FeaturesHeading;   // ✅ default export
+export default FeaturesHeading;  
+
+

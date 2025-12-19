@@ -17,7 +17,7 @@ export default function Footer() {
           <Col lg="6" md="12">
             <div className="footer-main">
               <Image
-                src="/footerlogo.png"
+                src="/footer-logo.png"
                 width={150}
                 height={50}
               />

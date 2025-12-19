@@ -40,14 +40,14 @@ export const Works = () => {
                         <Row>
                             {t.cards.map((item, index) => (
                                 <Col lg="4" md="6" sm="12" key={index}>
-                                    <div className='worsks-card' data-aos="fade-up" data-aos-delay={100 + index * 150}>
+                                    <div className='works-card-wrapper' data-aos="fade-up" data-aos-delay={100 + index * 150}>
                                         <div className="works-card">
                                             <div className="icon">
                                                 <Image
                                                     src={item.iconsrc || '/works-icon1.png'}
                                                     alt={item.title}
                                                     height={72}
-                                                    width={69.01}
+                                                    width={69}
                                                 />
                                             </div>
                                             <div className="works-card-content">

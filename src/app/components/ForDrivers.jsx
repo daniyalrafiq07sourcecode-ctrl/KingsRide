@@ -35,7 +35,7 @@ export const ForDrivers = () => {
                                 src="/advanced-features-img2.png"
                                 height={500}
                                 width={600}
-                                alt="Advanced Features Image"
+                                alt="For Drivers Image"
                             />
                         </div>
                     </Col>
@@ -44,9 +44,9 @@ export const ForDrivers = () => {
                     <Col lg={6} md={12}>
                         <div data-aos="fade-left" data-aos-delay="300">
                             <FeaturesHeading
-                                headingspan={t.headingspan}
+                                headingSpan={t.headingSpan}
                                 title={t.title}
-                                para={content.para}
+                                para={t.para}
                                 listheading={content.listheading}
                                 listpara={content.listpara}
                                 listheadingsec={content.listheadingsec}
